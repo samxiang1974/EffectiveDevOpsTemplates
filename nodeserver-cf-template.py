@@ -99,7 +99,6 @@ GithubAnsibleURL = "https://github.com/{}/Ansible".format(GithubAccount)
 
 
 AnsiblePullCmd = \
-
     "/usr/local/bin/ansible-pull -U {} {}.yml -i localhost".format(
 
         GithubAnsibleURL,
@@ -454,7 +453,7 @@ t.add_resource(LaunchConfiguration(
 
     UserData=ud,
 
-    ImageId="ami-a4c7edb2",
+    ImageId="ami-09b42976632b27e9b",
 
     KeyName=Ref("KeyPair"),
 
