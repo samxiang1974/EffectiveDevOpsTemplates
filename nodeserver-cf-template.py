@@ -433,6 +433,8 @@ t.add_resource(IAMPolicy(
 
                     Action("events", "Put*"),
 
+                    Action("firehose", "Put*"),
+
                 ],
 
                 Resource=["*"])
