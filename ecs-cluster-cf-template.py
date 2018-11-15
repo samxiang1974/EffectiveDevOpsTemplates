@@ -31,7 +31,16 @@ from troposphere.ecs import Cluster
 
 from troposphere.iam import (
     InstanceProfile,
-    Role
+    Role,
+    PolicyType as IAMPolicy
+)
+
+from awacs.aws import (
+    Action,
+    Allow,
+    Policy,
+    Principal,
+    Statement,
 )
 
 PublicCidrIp = str(ip_network(get_ip()))
@@ -99,6 +108,20 @@ t.add_resource(Role(
             'Effect': 'Allow',
         }]
     }
+))
+
+t.add_resource(IAMPolicy(
+    "Policy",
+    PolicyName="EventAllow",
+    PolicyDocument=Policy(
+        Statement=[
+            Statement(
+                Effect=Allow,
+                Action=[Action("event", "put*")],
+                Resource=["*"])
+        ]
+    ),
+    Roles=[Ref("EcsClusterRole")]
 ))
 
 t.add_resource(InstanceProfile(

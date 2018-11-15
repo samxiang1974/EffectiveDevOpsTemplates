@@ -2,7 +2,7 @@
 
 from troposphere.ecs import (
     TaskDefinition,
-    ContainerDefinition
+    ContainerDefinition,
     LogConfiguration,
     Environment,
 )
@@ -58,7 +58,7 @@ t.add_resource(TaskDefinition(
             Cpu=256,
             Name="helloworld",
             PortMappings=[ecs.PortMapping(
-                ContainerPort=3000)]
+                ContainerPort=3000)],
             Environment=[
                 Environment(Name='HELLOWORLD_VERSION', Value=Ref("Tag"))
             ],
