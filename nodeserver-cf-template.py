@@ -435,6 +435,8 @@ t.add_resource(IAMPolicy(
 
                     Action("firehose", "Put*"),
 
+                    Action("autoscaling", "DescribeAutoScalingInstances"),
+
                 ],
 
                 Resource=["*"])
