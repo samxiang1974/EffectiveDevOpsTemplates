@@ -388,14 +388,31 @@ t.add_resource(IAMPolicy(
     PolicyDocument=Policy(
 
         Statement=[
-
             Statement(
-
                 Effect=Allow,
-
-                Action=[Action("s3", "*")],
-
-                Resource=["*"])
+                Action=[
+                    Action("s3", "Get*"),
+                    Action("s3", "List*")
+                ],
+                Resource=[
+                    "arn:aws:s3:::codedeploydemobucket/*",
+                    "arn:aws:s3:::aws-codedeploy-us-east-2/*",
+                    "arn:aws:s3:::aws-codedeploy-us-east-1/*",
+                    "arn:aws:s3:::aws-codedeploy-us-west-1/*",
+	            "arn:aws:s3:::aws-codedeploy-us-west-2/*",
+                    "arn:aws:s3:::aws-codedeploy-ca-central-1/*",
+                    "arn:aws:s3:::aws-codedeploy-eu-west-1/*",
+                    "arn:aws:s3:::aws-codedeploy-eu-west-2/*",
+                    "arn:aws:s3:::aws-codedeploy-eu-central-1/*",
+                    "arn:aws:s3:::aws-codedeploy-ap-northeast-1/*",
+                    "arn:aws:s3:::aws-codedeploy-ap-northeast-2/*",
+                    "arn:aws:s3:::aws-codedeploy-ap-southeast-1/*",
+                    "arn:aws:s3:::aws-codedeploy-ap-southeast-2/*",
+                    "arn:aws:s3:::aws-codedeploy-ap-south-1/*",
+                    "arn:aws:s3:::aws-codedeploy-sa-east-1/*",
+                    "arn:aws-cn:s3:::aws-codedeploy-cn-north-1/*"
+                ]
+            )
 
         ]
 
