@@ -395,7 +395,7 @@ t.add_resource(IAMPolicy(
                     Action("s3", "List*")
                 ],
                 Resource=[
-                    "arn:aws:s3:::codedeploydemobucket/*",
+                    "arn:aws:s3:::codepipeline-ap-southeast-2-79558822041/*",
                     "arn:aws:s3:::aws-codedeploy-us-east-2/*",
                     "arn:aws:s3:::aws-codedeploy-us-east-1/*",
                     "arn:aws:s3:::aws-codedeploy-us-west-1/*",
@@ -410,7 +410,6 @@ t.add_resource(IAMPolicy(
                     "arn:aws:s3:::aws-codedeploy-ap-southeast-2/*",
                     "arn:aws:s3:::aws-codedeploy-ap-south-1/*",
                     "arn:aws:s3:::aws-codedeploy-sa-east-1/*",
-                    "arn:aws-cn:s3:::aws-codedeploy-cn-north-1/*"
                 ]
             )
 
